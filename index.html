@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gestione Menù - Chef</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Menù del Giorno</h1>
+            <p>Compila i piatti e invia alla reception</p>
+        </header>
+
+        <section class="card auth-section">
+            <div class="input-group">
+                <label for="pin">PIN Sicurezza</label>
+                <input type="password" id="pin" placeholder="Inserisci PIN" value="1234">
+            </div>
+            <div class="input-group">
+                <label for="data_menu">Data Menù (Scegli o Scrivi)</label>
+                <!-- Input type date attiva il calendario nativo su smartphone -->
+                <input type="date" id="data_menu">
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>PRANZO</h2>
+            <div class="input-group"><input type="text" id="p_primo_1" placeholder="Primo 1 (es. Malloreddus...)"></div>
+            <div class="input-group"><input type="text" id="p_primo_2" placeholder="Primo 2"></div>
+            <div class="input-group"><input type="text" id="p_primo_3" placeholder="Primo 3"></div>
+            <hr>
+            <div class="input-group"><input type="text" id="p_sec_1" placeholder="Secondo 1 (es. Trancio di spada...)"></div>
+            <div class="input-group"><input type="text" id="p_sec_2" placeholder="Secondo 2"></div>
+            <div class="input-group"><input type="text" id="p_sec_3" placeholder="Secondo 3"></div>
+            <hr>
+            <h3 style="color:#2563eb; font-size:1rem; margin-bottom:10px;">🧒 Menù Bambini (Pranzo)</h3>
+            <div class="input-group"><input type="text" id="p_bimbi_primo" placeholder="Primo (es. Pasta al ragù)"></div>
+            <div class="input-group"><input type="text" id="p_bimbi_sec" placeholder="Secondo (es. Hamburger)"></div>
+        </section>
+
+        <section class="card">
+            <h2>CENA</h2>
+            <div class="input-group"><input type="text" id="c_primo_1" placeholder="Primo 1"></div>
+            <div class="input-group"><input type="text" id="c_primo_2" placeholder="Primo 2"></div>
+            <div class="input-group"><input type="text" id="c_primo_3" placeholder="Primo 3"></div>
+            <hr>
+            <div class="input-group"><input type="text" id="c_sec_1" placeholder="Secondo 1"></div>
+            <div class="input-group"><input type="text" id="c_sec_2" placeholder="Secondo 2"></div>
+            <div class="input-group"><input type="text" id="c_sec_3" placeholder="Secondo 3"></div>
+            <hr>
+            <h3 style="color:#2563eb; font-size:1rem; margin-bottom:10px;">🧒 Menù Bambini (Cena)</h3>
+            <div class="input-group"><input type="text" id="c_bimbi_primo" placeholder="Primo Bambini"></div>
+            <div class="input-group"><input type="text" id="c_bimbi_sec" placeholder="Secondo Bambini"></div>
+        </section>
+
+        <button id="btnInvia" class="primary-btn">INVIA MENÙ ALLA RECEPTION</button>
+        <div id="statusMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
