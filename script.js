@@ -10,11 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById('btnInvia').addEventListener('click', inviaMenu);
 
-// Funzione che converte la data da "YYYY-MM-DD" a "DD/MM/YYYY" per la stampa in Word
+// Converte da "YYYY-MM-DD" a "Mercoledì 10 giugno 2026"
 function formattaData(dataString) {
     if (!dataString) return "";
+    
+    // Divide anno, mese e giorno per evitare problemi di fuso orario
     const [year, month, day] = dataString.split("-");
-    return `${day}/${month}/${year}`;
+    const dateObj = new Date(year, month - 1, day); 
+    
+    // Opzioni per avere giorno della settimana, numero, mese e anno
+    const opzioni = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    let dataFormattata = dateObj.toLocaleDateString('it-IT', opzioni);
+    
+    // Mette la prima lettera maiuscola (es. "Mercoledì" invece di "mercoledì")
+    return dataFormattata.charAt(0).toUpperCase() + dataFormattata.slice(1);
 }
 
 async function inviaMenu() {
